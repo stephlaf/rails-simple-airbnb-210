@@ -1,0 +1,12 @@
+<%= simple_form_for @flat do |f| %>
+  <div class="form-group">
+    <%= f.input :name, class: 'form-control' %>
+    <%= f.input :address, class: 'form-control' %>
+    <%= f.input :description, class: 'form-control' %>
+    <%= f.input :price_per_night, class: 'form-control' %>
+    <%= f.input :number_of_guests, class: 'form-control' %>
+    <%= f.submit 'Do it...', class: 'btn btn-sm btn-success' %>
+    
+  </div>
+
+<% end %>

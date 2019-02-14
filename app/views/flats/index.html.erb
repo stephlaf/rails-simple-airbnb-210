@@ -1,0 +1,27 @@
+<div class="container text-center">
+  
+  <h1>All our flats</h1>
+  
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-xs-12 col-sm-4">
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= flat.photo %>)">
+        <h4> <%= flat.name %></h4>
+        <p><%= flat.address %></p>
+        <div class="icons">
+            <i class="fas fa-dollar-sign"><%= flat.price_per_night %> per night</i>
+            <i class="fas fa-users"> <%= flat.number_of_guests %></i>
+        </div>
+
+        <div class="links">
+          <%= link_to 'More Info', flat_path(flat) %>
+          <%= link_to 'Edit', edit_flat_path(flat) %>
+          <%= link_to 'Delete', flat_path(flat), method: :delete, data: { confirm: "Sure there?" } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
